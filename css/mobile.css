@@ -373,7 +373,7 @@ footer .subscribe input::placeholder{
 /*Menu*/
 .mobile-menu{
     padding: 1.5rem 1rem;
-    position: absolute;
+    position: fixed;
     left: 0;
     top: 0;
     width: 100%;
@@ -394,12 +394,12 @@ footer .subscribe input::placeholder{
     flex-direction: column;
     row-gap: 1.5rem;
 }
-.mobile-menu .close{
+.mobile-menu .close-container{
     width: 100%;
     display: flex;
     justify-content: flex-end;
 }
-.close figure{
+.close-container .close{
     padding: .5rem;
     border: 1px solid #E7E9FC;
     border-radius: 50%;
@@ -440,6 +440,10 @@ footer .subscribe input::placeholder{
 
 /*Mobile Menu Footer*/
 
+.mobile-menu{
+    display: none;
+}
+
 .menu-footer .link{
     font-size: 1.25rem;
     line-height: 1.5rem;
@@ -463,5 +467,9 @@ footer .subscribe input::placeholder{
     height: 2.5rem;
     background-color: var(--primary);
     border-radius: 50%;
+}
+
+.is-open{
+    display: flex;
 }
 
