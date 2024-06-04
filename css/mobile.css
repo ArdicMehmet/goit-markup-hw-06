@@ -85,12 +85,7 @@ main .greetings{
     background-size:cover;
     position: relative;
 }
-.our-goals .goals-card:first-child{
-    margin-top: 4.5rem;
-}
-.mb-4{
-    margin-bottom: 4.5rem ;
-}
+
 main .greetings::after{
     content: "";
     position: absolute;
@@ -126,7 +121,7 @@ main .greetings::after{
     font-size: 2rem;
     text-align: center;
 }
-.greetings-container button, footer .subscribe button{
+.greetings-container button, footer .subscribe button, .modal .contact .send-btn{
     text-transform: capitalize;
     color: var(--color-classic);
     line-height: 1.5rem;
@@ -146,7 +141,21 @@ main .greetings::after{
 /*Section Our Goals*/
 
 main .our-goals{
+    margin: 6rem 0;
+}
+
+.our-goals .container{
+    display: flex;
+    flex-direction: column;
+    column-gap: 1.5rem;
+    row-gap: 4.5rem;
     width: 100%;
+}
+.our-goals .goals-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .goals-card .title{
     font-size: 2.25rem;
@@ -154,12 +163,14 @@ main .our-goals{
     color: var(--secondary);
     text-align: center;
     margin-bottom: .5rem;
+    width: 100%;
 }
 .goals-card .description{
     font-size: 1rem;
     line-height: 1.5rem;
     color: var(--secondary);
     text-align: center;
+    width: 100%;
 }
 
 /* Section Our Team*/
@@ -171,6 +182,7 @@ main .our-goals{
     flex-direction: column;
     align-items: center;
     row-gap: 4.5rem;
+    column-gap: 1.5rem;
     padding: 6rem 1.75rem;
 }
 .team .title{
@@ -178,6 +190,7 @@ main .our-goals{
     line-height: 2.5rem;
     font-size: 2.25rem;
     text-align: center;
+    flex-basis: 100%;
 }
 .team .card{
     display: flex;
@@ -229,6 +242,7 @@ main .our-goals{
     flex-direction: column;
     align-items: center;
     row-gap: 4.5rem;
+    column-gap: 1.5rem;
     padding: 6rem 1.75rem;
 }
 .portfolio .title{
@@ -236,6 +250,7 @@ main .our-goals{
     line-height: 2.5rem;
     font-size: 2.25rem;
     text-align: center;
+    flex-basis: 100%;
 }
 .portfolio .card{
     display: flex;
@@ -371,7 +386,8 @@ footer .subscribe input::placeholder{
 }
 
 /*Menu*/
-.mobile-menu{
+
+.mobile-menu, .modal{
     padding: 1.5rem 1rem;
     position: fixed;
     left: 0;
@@ -381,10 +397,13 @@ footer .subscribe input::placeholder{
     background-color: var(--color-classic);
     display: flex;
     flex-direction: column;
+    z-index: 10;
+    display: none;
+}
+
+.mobile-menu{
     justify-content: space-between;
     align-items: center;
-    z-index: 10;
-    box-shadow: 0 1px 2px 1px var(--secondary);
 }
 .mobile-menu .menu-header, .mobile-menu .menu-footer{
     width: 100%;
@@ -394,7 +413,7 @@ footer .subscribe input::placeholder{
     flex-direction: column;
     row-gap: 1.5rem;
 }
-.mobile-menu .close-container{
+.mobile-menu .close-container, .modal .close-container{
     width: 100%;
     display: flex;
     justify-content: flex-end;
@@ -469,6 +488,107 @@ footer .subscribe input::placeholder{
     border-radius: 50%;
 }
 
+
+/* Modal */
+.modal{
+    row-gap: 1rem;
+}
+.modal .close{
+    background-color: #E7E9FC;
+}
+.modal-main{
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+
+}
+.modal-main .title{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--secondary);
+    text-align: center;
+}
+.contact{
+    display: flex;
+    flex-direction: column;
+    row-gap: .5rem;
+}
+.contact .input-container{
+    position: relative;
+}
+
+.contact .contact-label{
+    font-size: .75rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: .875rem;
+    color: #8E8F99;
+    margin-bottom: .25rem;
+}
+.contact .privacy-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    column-gap: .5rem;
+    margin-top: .5rem;
+    margin-bottom: 2.5rem;
+}
+.contact #privacy{
+    width: 1rem;
+    height: 1rem;
+    border-radius: .25rem;
+    border: 1px solid #8E8F99;
+}
+.contact .privacy .privacy-link{
+    display: block;
+    text-decoration: none;
+    text-transform: capitalize;
+    color: var(--primary);
+}
+.input-container .icon{
+    position: absolute;
+    left: 1rem;
+    top: .5rem;
+    padding: 3px 0;
+}
+
+.contact input[type="text"],.contact input[type="tel"],.contact input[type="email"]{
+    width: 100%;
+    height: 2.5rem;
+    border-radius: .25rem;
+    border: 1px solid #8E8F99;
+    outline: none;
+    padding-left: 2.5rem;
+    padding-right: 1rem;
+}
+.contact textarea{
+    width: 100%;
+    height: 6.6rem;
+    border-radius: .25rem;
+    border: 1px solid #8E8F99;
+    padding: 1rem;
+    outline: none;
+    resize: none;
+    font-size: .75rem;
+    line-height: .875rem;
+    font-weight: 400;
+}
+.contact textarea::placeholder{
+    font-size: .75rem;
+    line-height: .875rem;
+    color: #8E8F99;
+    letter-spacing: 4%;
+}
+
+.container-send{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal .container-send .send-btn{
+    padding: 1.2rem 4rem;
+}
 .is-open{
     display: flex;
 }

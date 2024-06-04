@@ -39,7 +39,7 @@
           <h1 class="roboto font-weight-700">
             Effective Solutions for Your Business
           </h1>
-          <button class="roboto font-weight-500">Order Service</button>
+          <button class="roboto font-weight-500 modal-btn">Order Service</button>
         </div>
       </section>
       <section class="our-goals roboto">
@@ -365,15 +365,17 @@
           <h4 class="subscribe-title roboto font-weight-700">Subscribe</h4>
           <form action="#">
             <input type="text roboto" placeholder="E-mail" />
-            <button class="roboto font-weight-500">
-              Subscribe
-              <figure>
-                <img
-                  src="./assets/images/Logo/Footer/telegram.png"
-                  alt="telegram"
-                />
-              </figure>
-            </button>
+            <div class=" subscribe-btn-container">
+              <button class="roboto font-weight-500">
+                Subscribe
+                <figure>
+                  <img
+                    src="./assets/images/Logo/Footer/telegram.png"
+                    alt="telegram"
+                  />
+                </figure>
+              </button>
+            </div>
           </form>
         </div>
       </div>
@@ -448,7 +450,78 @@
         </div>
       </div>
     </div>
-    <div class="modal"></div>
+    <div class="modal">
+      <div class="modal-header">
+        <div class="close-container">
+          <figure class="close">
+            <img
+              class="mobile-menu-btn"
+              src="./assets/images/Logo/close.png"
+              alt="close"
+            />
+          </figure>
+        </div>
+      </div>
+      <div class="modal-main">
+        <h4 class="title roboto font-weight-500">
+          Leave your contacts and we will call you back
+        </h4>
+        <form action="#" class="contact">
+          <div class="input-group">
+            <label class="contact-label roboto" for="contact-name">Name</label>
+            <div class="input-container">
+              <figure class="icon">
+                <img src="./assets/images/Form/VectorFormUser.png" alt="user" />
+              </figure>
+              <input id="contact-name" name="contact-name" type="text" />
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="contact-label roboto" for="contact-phone"
+              >Phone</label
+            >
+            <div class="input-container">
+              <figure class="icon">
+                <img src="./assets/images/Form/VectorPhone.png" alt="phone" />
+              </figure>
+              <input id="contact-phone" name="contact-phone" type="tel" />
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="contact-label roboto" for="contact-mail">Mail</label>
+            <div class="input-container">
+              <figure class="icon">
+                <img src="./assets/images/Form/VectorMail.png" alt="mail" />
+              </figure>
+              <input id="contact-mail" name="contact-mail" type="email" />
+            </div>
+          </div>
+          <div class="input-group">
+            <label class="contact-label roboto" for="contact-comment"
+              >Comment</label
+            >
+            <div class="input-group">
+              <textarea
+                id="contact-comment"
+                class="roboto"
+                placeholder="Text Input"
+              ></textarea>
+            </div>
+            <div class="input-group privacy-container">
+              <input type="checkbox" id="privacy" />
+              <label class="privacy" for="privacy">
+                I accept the terms and conditions of the <a class="privacy-link" href="#">Privacy Policy</a>
+              </label>
+            </div>
+            <div class="input-group container-send">
+              <input type="submit" class="roboto font-weight-500 send-btn" value="Send">
+              </input>
+            </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
     <script src="./js/script.js"></script>
   </body>
 </html>
