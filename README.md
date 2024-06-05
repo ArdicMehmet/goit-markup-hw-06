@@ -1,2 +1,2 @@
 This project prepared with Html5 and Css3
-And design for just mobile view, will update tablet and desktop view coming soon.
+And design for mobile and tablet view, will update desktop view coming soon.
